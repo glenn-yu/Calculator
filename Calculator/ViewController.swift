@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     var userIsInTheMiddleOfTypingANumber : Bool = false
     
+    var brain = CalculatorBrain()
+    
     @IBAction func appendDigit(sender: UIButton) {
         // 뒤에 느낌표를 붙이면 타입이 정해진다.
         // 그 전에는 물음표가 붙어서 무슨 타입인지 정해지지 않아서 Optional 이 된다.
@@ -30,40 +32,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func operate(sender: UIButton) {
-        let operation = sender.currentTitle!
+
         if userIsInTheMiddleOfTypingANumber {
             enter()
         }
-        switch operation {
-            case "×": performOperation{ $0 * $1 }
-            case "÷": performOperation{ $0 / $1 }
-            case "+": performOperation{ $0 + $1 }
-            case "−": performOperation{ $0 - $1 }
-            case "√": performOperation1{ sqrt($0) }
-        default: break
+        if let operation = sender.currentTitle {
+            if let result = brain.performOperation(operation) {
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
+            
         }
+       
     }
-    
-    func performOperation(operation: (Double, Double) -> Double){
-        if operandStack.count >= 2 {
-            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
-            enter()
-        }
-    }
-
-    func performOperation1(operation: Double -> Double){
-        if operandStack.count >= 1 {
-            displayValue = operation(operandStack.removeLast())
-            enter()
-        }
-    }
-
+   
     var operandStack = Array<Double>()
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
-        operandStack.append(displayValue)
-        print("operandStack = \(operandStack)")
+        if let result = brain.pushOperand(displayValue) {
+            displayValue = result
+        } else {
+            displayValue = 0
+        }
     }
     
     var displayValue: Double {
@@ -72,7 +64,6 @@ class ViewController: UIViewController {
         }
         set {
             display.text = "\(newValue)"
-            userIsInTheMiddleOfTypingANumber = false
         }
     }
 }

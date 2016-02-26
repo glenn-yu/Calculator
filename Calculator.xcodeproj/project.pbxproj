@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE2C013B1C80237700525653 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C013A1C80237700525653 /* CalculatorBrain.swift */; };
 		EE86BF5B1C788D5800785127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86BF5A1C788D5800785127 /* AppDelegate.swift */; };
 		EE86BF5D1C788D5800785127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86BF5C1C788D5800785127 /* ViewController.swift */; };
 		EE86BF601C788D5800785127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE86BF5E1C788D5800785127 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE2C013A1C80237700525653 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		EE86BF571C788D5800785127 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE86BF5A1C788D5800785127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE86BF5C1C788D5800785127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				EE86BF5C1C788D5800785127 /* ViewController.swift */,
 				EE86BF5E1C788D5800785127 /* Main.storyboard */,
+				EE2C013A1C80237700525653 /* CalculatorBrain.swift */,
 				EE86BF881C788E4E00785127 /* Supporting Files */,
 			);
 			path = Calculator;
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2C013B1C80237700525653 /* CalculatorBrain.swift in Sources */,
 				EE86BF5D1C788D5800785127 /* ViewController.swift in Sources */,
 				EE86BF5B1C788D5800785127 /* AppDelegate.swift in Sources */,
 			);
@@ -496,6 +500,7 @@
 				EE86BF811C788D5800785127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE86BF821C788D5800785127 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				EE86BF841C788D5800785127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE86BF851C788D5800785127 /* Build configuration list for PBXNativeTarget "CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				EE86BF871C788D5800785127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
